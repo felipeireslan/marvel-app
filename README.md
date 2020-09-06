@@ -19,6 +19,7 @@ Obs: This command will install all dependencies.
 
 ### Step 2
 - Now at root of `src` folder you have to create a folder with name `config` and a file with name `config.js` like below.
+- You must get your own `Auth Keys` on [Developer Portal of Marvel](https://developer.marvel.com/)
 
 ```javascript
     const envConfig = {
