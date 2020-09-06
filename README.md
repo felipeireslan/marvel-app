@@ -11,10 +11,10 @@
 and run the following command.
 
 ```
-    npm install
+    npm install or yarn
 ```
 
-Obs: This command will install all dependencies.
+Obs: This command will install all dependencies. Remember that you must have React already installed in your machine.
 
 
 ### Step 2
@@ -30,6 +30,10 @@ Obs: This command will install all dependencies.
 
     export default envConfig
 ```
+
+### Step 3
+
+- Now you just need run `npm start` or `yarn start` on your Terminal or Command Prompt at the project folder.
 
 ### About
 
