@@ -2,7 +2,8 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
 const INITIAL_STATE = {
-    isCharacterSelected: false,
+    isModalOpen: false,
+    activeCharacter: {},
     characterName: '',
     loading: false,
     characterList: [],
@@ -37,6 +38,17 @@ function characterReducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 characterName: action.characterName
+            }
+        case "SET_TOGGLE_MODAL_STATE":
+            return {
+                ...state,
+                isModalOpen: !state.isModalOpen
+            }
+
+        case "SET_ACTIVE_CHARACTER":
+            return {
+                ...state,
+                activeCharacter: action.activeCharacter
             }
 
         default:

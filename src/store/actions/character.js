@@ -24,3 +24,16 @@ export function setCharacterName(characterName) {
         characterName
     }
 }
+
+export function setActiveCharacter(character) {
+    return {
+        type: 'SET_ACTIVE_CHARACTER',
+        activeCharacter: character
+    }
+}
+
+export function setToggleModalState() {
+    return {
+        type: 'SET_TOGGLE_MODAL_STATE'
+    }
+}

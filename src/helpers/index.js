@@ -1,37 +1,48 @@
 import axios from 'axios'
 import { MD5 } from 'crypto-js'
 
-import { fetchCharacterListPending, fetchCharacterListSuccess, fetchCharacterListError } from '../store/actions/character';
+import envConfig from './../config/config'
+import { fetchCharacterListPending, fetchCharacterListSuccess, fetchCharacterListError, setToggleModalState, setActiveCharacter } from '../store/actions/character';
 
-const   baseUrl     = 'http://gateway.marvel.com',
-        privateKey  = 'a2510caf764e313034a892e18a71c46a286d8169',
-        publickKey  = '9ff737af632e6cb8d3d6015d70c0fa8c',
-        ts          = Date.now(),
-        str_hash    = ts + privateKey + publickKey;
+const   ts       = Date.now(),
+        str_hash = ts + envConfig.privateKey + envConfig.publickKey;
 
 
 export const fetchCharacterList = (name) => {
     return dispatch => {
         dispatch(fetchCharacterListPending())
 
-        const endpoint = baseUrl + '/v1/public/characters'
+        const endpoint = envConfig.baseUrl + '/v1/public/characters'
 
         axios.get(endpoint, {
             params: {
                 ts,
-                apikey: publickKey,
+                apikey: envConfig.publickKey,
                 hash: MD5(str_hash).toString(),
-                ...(name ? { name: name } : {})
+                ...(name ? { nameStartsWith: name } : {})
             }
         }).then(res => {
             if (res.error) {
-                throw(res.error);
+                throw (res.error);
             }
 
             dispatch(fetchCharacterListSuccess(res.data.data.results))
         }).catch(error => {
             dispatch(fetchCharacterListError(error))
         })
+    }
+}
+
+export const setSelectedCharacter = (character) => {
+    return dispatch => {
+        dispatch(setToggleModalState())
+        dispatch(setActiveCharacter(character))
+    }
+}
+
+export const toggleModalState = () => {
+    return dispatch => {
+        dispatch(setToggleModalState())
     }
 }
 

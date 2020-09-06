@@ -10,7 +10,8 @@ import { fetchCharacterList } from './../../helpers';
 import './SearchBar-style.scss';
 
 const SearchBar = ({ characterName, fetchCharacterList, setCharacterName }) => {
-    const onSubmit = () => {
+    const onSubmit = (e) => {
+        e.preventDefault()
         fetchCharacterList(characterName)
     }
 
@@ -20,7 +21,7 @@ const SearchBar = ({ characterName, fetchCharacterList, setCharacterName }) => {
 
     return (
         <div>
-            <Form className="form" action="#" onSubmit={onSubmit}>
+            <Form className="form" onSubmit={onSubmit}>
                 <InputGroup className="input-group-container">
                     <InputGroup.Prepend>
                         <InputGroup.Text>@</InputGroup.Text>
