@@ -14,7 +14,7 @@ and run the following command.
     npm install or yarn
 ```
 
-Obs: This command will install all dependencies. Remember that you must have React already installed in your machine.
+Obs: This command will install all dependencies. Remember that you must have [React](https://pt-br.reactjs.org/) already installed in your machine.
 
 
 ### Step 2
