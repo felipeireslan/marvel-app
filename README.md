@@ -38,4 +38,4 @@ Obs: This command will install all dependencies. Remember that you must have [Re
 ### About
 
 This project was developed with purpose to learn Redux.
-When you `run` the project, you will see a single page with some `Marvel Character Cards` and you can click at it to see more info about `Character`
+When you `run` the project, you will see a single page with some `Marvel Character Cards` and you can click at it to see more info about `Character` and you can search Marvel Character by name using Search Bar at the top of page.
