@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import Icon from '@material-ui/core/Icon';
 
 import { setCharacterName } from './../../store/actions/character';
 import { fetchCharacterList } from './../../helpers';
@@ -19,6 +20,10 @@ const SearchBar = ({ characterName, fetchCharacterList, setCharacterName }) => {
         setCharacterName(e.target.value)
     }
 
+    const clearSearch = () => {
+        setCharacterName('')
+    }
+
     return (
         <div>
             <Form className="form" onSubmit={onSubmit}>
@@ -31,6 +36,7 @@ const SearchBar = ({ characterName, fetchCharacterList, setCharacterName }) => {
                         value={characterName}
                         onChange={handleInputChange}
                     />
+                    {characterName && <Icon className="card-icon" onClick={clearSearch}>close</Icon>}
                 </InputGroup>
             </Form>
         </div>

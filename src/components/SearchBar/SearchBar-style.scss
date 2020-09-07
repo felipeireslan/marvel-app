@@ -5,5 +5,13 @@
     .input-group-container {
         width: 80% !important;
         margin: 0 auto;
+        position: relative;
+
+        .card-icon {
+            position: absolute;
+            right: 7px;
+            top: 7px;
+            z-index: 10;
+        }
     }
 }

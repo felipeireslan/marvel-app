@@ -35,29 +35,6 @@ $card-height: 390px;
             border-top: $border-title;
             border-bottom: $border-title;
         }
-        
-        .card-description {
-            font-weight: bold;
-            color: $text-and-icon-color;
-        }
-        
-        .card-text-container {
-            display: flex;;
-            margin-bottom: 5px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            max-height: 3.6em;
-            line-height: 1.8em;
-        }
-        
-        .card-text {
-            font-weight: bold;
-            color: $text-and-icon-color;
-        }
-        
-        .card-icon {
-            color: $text-and-icon-color;
-            margin-right: 7px;
-        }
+
     }
 }
